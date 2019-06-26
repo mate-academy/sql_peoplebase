@@ -35,9 +35,9 @@ Here are eight famous people:
     insert into people
     values (6, 'Charles', 'Darwin',	1809, 1882);
     insert into people
-    values (7, 'Pele',	null, 1940,	null);
+    values (7, 'Pele', null, 1940, null);
     insert into people
-    values (8,	'Fidel',	'Castro',	1926,	null);
+    values (8, 'Fidel',	'Castro', 1926,	null);
     ```
 
 3. Create a query that would return everything from the table:
