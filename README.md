@@ -139,43 +139,51 @@ Here are eight famous people:
 16. Create a query that would return the first names of the people sorted in the reverse alphabetical order. The column should be aliased `fn`.
 
     ```postgresql
-    ... here goes your SQL ...
+    select first_name as fn  from people
+    order by first_name desc;
     ```
 
 17. Create a query that would return the people sorted by their year of birth in the descending order, and then (if two or more people share the same year of birth) by their last name alphabetically:
 
     ```postgresql
-    ... here goes your SQL ...
+    select *  from people
+    order by birth_year desc, last_name;
     ```
     
 18. Set everyone’s last name to your last name:
 
     ```postgresql
-    ... here goes your SQL ...
+    update people
+    set last_name = 'Kurmoiarov';
     ```
     
 19. Update the first name of everyone who was born before 1900 to your favorite character’s name:
 
     ```postgresql
-    ... here goes your SQL ...
+    update people
+    set first_name = 'A'
+    where birth_year < 1900;
     ```
     
 20. Add 1 to both the year of birth and year of death for everyone whose ID is less than 5:
 
     ```postgresql
-    ... here goes your SQL ...
+    update people
+    set birth_year = birth_year + 1, death_year = death_year +1
+    where id < 5;
     ```
 
 21. Delete from the table everyone who died before 2000:
 
     ```postgresql
-    ... here goes your SQL ...
+    delete from people
+    where death_year < 2000;
     ```
 
 22. Delete everyone from the table:
 
     ```postgresql
-    ... here goes your SQL ...
+    delete from people;
     ```
     
 Don’t forget to create a pull request.
