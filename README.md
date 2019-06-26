@@ -23,19 +23,19 @@ Here are eight famous people:
 
     ```postgresql
     insert into people
-    values (1, 'Marilyn',	'Monroe',	1926, 1962);
+    values (1, 'Marilyn', 'Monroe', 1926, 1962);
     insert into people
-    values (2, 'Abraham',	'Lincoln',	1809,	1865);
+    values (2, 'Abraham', 'Lincoln', 1809, 1865);
     insert into people
-    values (3,	'Nelson',	'Mandela',	1918,	2013);
+    values (3, 'Nelson', 'Mandela', 1918, 2013);
     insert into people
-    values (4,	'Winston',	'Churchill',	1874,	1965);
+    values (4, 'Winston', 'Churchill', 1874, 1965);
     insert into people
-    values (5,	'Bill',	'Gates',	1955,	null);
+    values (5, 'Bill', 'Gates', 1955, null);
     insert into people
-    values (6,	'Charles',	'Darwin',	1809,	1882);
+    values (6, 'Charles', 'Darwin',	1809, 1882);
     insert into people
-    values (7,	'Pele',	null,	1940,	null);
+    values (7, 'Pele',	null, 1940,	null);
     insert into people
     values (8,	'Fidel',	'Castro',	1926,	null);
     ```
