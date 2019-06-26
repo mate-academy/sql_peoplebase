@@ -48,19 +48,19 @@ Here are eight famous people:
 4. Create a query that would return a single row: the person with the ID of 5.
 
     ```postgresql
-    SELECT id, first_name, last_name, year_birth, year_death FROM people WHERE id = 5
+    SELECT * FROM people WHERE id = 5
     ```
 
 5. Create a query that would return the four people with the following IDs: 1, 3, 7, 8.
 
     ```postgresql
-   SELECT id, first_name, last_name, year_birth, year_death FROM people WHERE id = 1 OR id =3 OR id = 7 OR id = 8
+   SELECT * FROM people WHERE id IN (1, 3, 7, 8)
     ```
 
 6. Create a query that would return all the people except the person with the ID of 4 (`Winston Churchill`).
 
     ```postgresql
-    SELECT id, first_name, last_name, year_birth, year_death FROM people WHERE id != 4
+    SELECT * FROM people WHERE id != 4
     ```
 
 7. Create a query that would select the first names and last names of the people who were born after 1920:
@@ -102,7 +102,7 @@ Here are eight famous people:
 13. Create a query that would select all the people except those whose last name starts with a `C`:
 
     ```postgresql
-    SELECT first_name, last_name FROM people WHERE last_name NOT LIKE 'C%'
+    SELECT * FROM people WHERE last_name NOT LIKE 'C%'
     ```
     
 14. Create a query that would select the people whose first name starts with a letter that precedes `M` in the English alphabet:
@@ -114,7 +114,7 @@ Here are eight famous people:
 15. Create a query that would return all the people sorted by their last name alphabetically:
 
     ```postgresql
-    SELECT first_name, last_name FROM people ORDER BY last_name
+    SELECT * FROM people ORDER BY last_name
     ```
 
 16. Create a query that would return the first names of the people sorted in the reverse alphabetical order. The column should be aliased `fn`.
@@ -126,7 +126,7 @@ Here are eight famous people:
 17. Create a query that would return the people sorted by their year of birth in the descending order, and then (if two or more people share the same year of birth) by their last name alphabetically:
 
     ```postgresql
-    SELECT id, first_name, last_name, year_birth, year_death FROM people ORDER BY year_birth DESC, last_name
+    SELECT * FROM people ORDER BY year_birth DESC, last_name
     ```
     
 18. Set everyone’s last name to your last name:
