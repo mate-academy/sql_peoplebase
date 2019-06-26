@@ -41,7 +41,7 @@ INSERT INTO "people" ("Id", "First Name", "Last Name", "Year of Birth", "Year of
     
 4. Create a query that would return a single row: the person with the ID of 5.
 
-   SELECT * FROM people WHERE "Id"=5;
+   SELECT * FROM people WHERE Id=5;
 5. Create a query that would return the four people with the following IDs: 1, 3, 7, 8.
 
     SELECT * FROM people WHERE "Id"=1 AND "Id"=3 AND "Id"=7 AND "Id"=8;
