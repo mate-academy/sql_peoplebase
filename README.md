@@ -73,7 +73,7 @@ Here are eight famous people:
 8. Create a query that would select the IDs of the living people:
 
     ```postgresql
-    SELECT id FROM "public"."famous" WHERE yearofdeath isnull 
+    SELECT id FROM "public"."famous" WHERE yearofdeath IS NULL
     ```
     
 9. Create a query that would return the years of birth and the years of death of everyone who has died. The columns should be aliased `b` and `d` respectively.
