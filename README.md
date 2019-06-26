@@ -44,7 +44,7 @@ INSERT INTO "people" ("Id", "First Name", "Last Name", "Year of Birth", "Year of
    SELECT * FROM people WHERE "Id"=5;
 5. Create a query that would return the four people with the following IDs: 1, 3, 7, 8.
 
-    SELECT * FROM people WHERE "Id"= 1 OR "Id" = 3 OR "Id" = 7 OR "Id" = 8;
+    SELECT * FROM people WHERE "Id" IN(1 ,3, 7, 8);
 
 6. Create a query that would return all the people except the person with the ID of 4 (`Winston Churchill`).
 
