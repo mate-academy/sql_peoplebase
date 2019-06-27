@@ -40,13 +40,13 @@ Here are eight famous people:
     ```postgresql
        INSERT INTO talbe_people (id, first_name, last_name, year_of_birth, year_of_death) 
        VALUES (1, 'Marilyn', 'Monroe', 1926, 1962),
-       VALUES (2, 'Abraham', 'Lincoln', 1809, 1865),
-       VALUES (3, 'Nelson', 'Mandela', 1918, 2013),
-       VALUES (4, 'Winston', 'Churchill', 1918, 2013),
-       VALUES (5, 'Bill', 'Gates', 1955, null),
-       VALUES (6, 'Charles', 'Darwin', 1809, 1882),
-       VALUES (7, 'Pele', '-', 1940, null),
-       VALUES (8, 'Fidel', 'Castro', 1926, null),
+           (2, 'Abraham', 'Lincoln', 1809, 1865),
+           (3, 'Nelson', 'Mandela', 1918, 2013),
+           (4, 'Winston', 'Churchill', 1918, 2013),
+           (5, 'Bill', 'Gates', 1955, null),
+           (6, 'Charles', 'Darwin', 1809, 1882),
+           (7, 'Pele', '-', 1940, null),
+           (8, 'Fidel', 'Castro', 1926, null)
     ```
 
 3. Create a query that would return everything from the table:
@@ -121,7 +121,7 @@ Here are eight famous people:
 14. Create a query that would select the people whose first name starts with a letter that precedes `M` in the English alphabet:
 
     ```postgresql
-        SELECT * FROM table_people WHERE LEFT("last_name", 1 ) < 'C%'
+        SELECT * FROM table_people WHERE LEFT("last_name", 1 ) < 'M%'
     ```
     
 15. Create a query that would return all the people sorted by their last name alphabetically:
