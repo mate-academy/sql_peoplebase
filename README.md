@@ -80,7 +80,7 @@ Here are eight famous people:
 9. Create a query that would return the years of birth and the years of death of everyone who has died. The columns should be aliased `b` and `d` respectively.
 
     ```postgresql
-    ... SELECT "Year of Birth" as b, "Year of Death" as d FROM people where  "Year of Death" IS null ...
+    ... SELECT "Year of Birth" as b, "Year of Death" as d FROM people where  "Year of Death" IS NOT NULL ...
     ```
     
 10. Create a query that would return the list of all years of birth, without repetition:
@@ -92,19 +92,19 @@ Here are eight famous people:
 11. Create a query that would select the people with either their first or last name starting with an `M`:
 
     ```postgresql
-    ... SELECT * FROM people where "First Name" like '%M%' or "Last Name" like '%M%' ...
+    ... SELECT * FROM people where "First Name" like 'M%' or "Last Name" like 'M%' ...
     ```
 
 12. Create a query that would select the people with both their first and last name starting with an `M`:
 
     ```postgresql
-    ... SELECT * FROM people where "First Name" like '%M%' and "Last Name" like '%M%' ...
+    ... SELECT * FROM people where "First Name" like 'M%' and "Last Name" like 'M%' ...
     ```
     
 13. Create a query that would select all the people except those whose last name starts with a `C`:
 
     ```postgresql
-    ... SELECT * FROM people where not "Last Name" like '%C%' ...
+    ... SELECT * FROM people where not "Last Name" like 'C%' ...
     ```
     
 14. Create a query that would select the people whose first name starts with a letter that precedes `M` in the English alphabet:
@@ -122,7 +122,7 @@ Here are eight famous people:
 16. Create a query that would return the first names of the people sorted in the reverse alphabetical order. The column should be aliased `fn`.
 
     ```postgresql
-    ... SELECT "First Name" FROM people order by "First Name" desc  ...
+    ... SELECT "First Name" AS fn FROM people order by "First Name" desc  ...
     ```
 
 17. Create a query that would return the people sorted by their year of birth in the descending order, and then (if two or more people share the same year of birth) by their last name alphabetically:
@@ -134,8 +134,7 @@ Here are eight famous people:
 18. Set everyone’s last name to your last name:
 
     ```postgresql
-    ... update people set "Last Name" = 'Lozytskyi' 
-        where  --- ? ...
+    ... update people set "Last Name" = 'Lozytskyi' ...
     ```
     
 19. Update the first name of everyone who was born before 1900 to your favorite character’s name:
@@ -159,10 +158,7 @@ Here are eight famous people:
 22. Delete everyone from the table:
 
     ```postgresql
-    ... DELETE FROM people 
-    
-        [2019-06-25 21:59:39] Unsafe query: 'Delete' statement without 'where' clears all data in the table
-    ...
+    ... DELETE FROM people ...
     ```
     
 Don’t forget to create a pull request.
