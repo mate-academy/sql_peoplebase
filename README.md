@@ -109,7 +109,7 @@ Here are eight famous people:
 14. Create a query that would select the people whose first name starts with a letter that precedes `M` in the English alphabet:
 
     ```postgresql
-        SELECT * FROM people WHERE "Last Name" ~ '^[A-M]'
+        SELECT * FROM people WHERE "Last Name" < 'M%'
     ```
     
 15. Create a query that would return all the people sorted by their last name alphabetically:
@@ -121,7 +121,7 @@ Here are eight famous people:
 16. Create a query that would return the first names of the people sorted in the reverse alphabetical order. The column should be aliased `fn`.
 
     ```postgresql
-        SELECT "First Name" AS fn FROM people ORDER BY "First Name" DESC LIMIT 1
+        SELECT "First Name" AS fn FROM people ORDER BY "First Name" DESC
     ```
 
 17. Create a query that would return the people sorted by their year of birth in the descending order, and then (if two or more people share the same year of birth) by their last name alphabetically:
@@ -157,7 +157,7 @@ Here are eight famous people:
 22. Delete everyone from the table:
 
     ```postgresql
-        DELETE FROM people
+        TRUNCATE TABLE people
     ```
     
 Don’t forget to create a pull request.
