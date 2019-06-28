@@ -168,7 +168,7 @@ Here are eight famous people:
 
     ```postgresql
     UPDATE celebrities
-    SET yearofbirth = yearofbirth + 1
+    SET yearofbirth = yearofbirth + 1, yearofdeath = yearofdeath + 1
     WHERE id < 5;
     ```
 
