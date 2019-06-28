@@ -63,7 +63,7 @@ Here are eight famous people:
 
     ```postgresql
     SELECT * FROM celebrities
-    WHERE id=1 OR id=3 OR id=7 OR id=8;
+    WHERE id IN(1, 3, 7, 8);
     ```
 
 6. Create a query that would return all the people except the person with the ID of 4 (`Winston Churchill`).
