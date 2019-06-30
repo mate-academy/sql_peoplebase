@@ -133,9 +133,8 @@ INSERT INTO people ("id", "firstname", "lastname", "yearofbirth", "yearofdeath")
 18. Set everyone’s last name to your last name:
 
     ```postgresql
-   update people set lastname = 'Batsenko'
-    ```
-    
+    update people set lastname = 'Batsenko'
+    ``` 
 19. Update the first name of everyone who was born before 1900 to your favorite character’s name:
 
     ```postgresql
