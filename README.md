@@ -56,7 +56,7 @@ Here are eight famous people:
 
     ```postgresql
     select * from people
-    where id IN (1, 3, 7, 8);
+    where id in (1, 3, 7, 8);
     ```
 
 6. Create a query that would return all the people except the person with the ID of 4 (`Winston Churchill`).
