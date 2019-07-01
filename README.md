@@ -23,29 +23,21 @@ Here are eight famous people:
 	last_name text,
 	birth_year int,
 	death_year int,
-	column_6 int
     );
     ```
 
 2. **Manually** create a query or a series of queries that would fill the table with the information above. Put the query/queries below:
 
     ```postgresql
-    insert into people
-    values (1, 'Marilyn', 'Monroe', 1926, 1962);
-    insert into people
-    values (2, 'Abraham', 'Lincoln', 1809, 1865);
-    insert into people
-    values (3, 'Nelson', 'Mandela', 1918, 2013);
-    insert into people
-    values (4, 'Winston', 'Churchill', 1874, 1965);
-    insert into people
-    values (5, 'Bill', 'Gates', 1955, null);
-    insert into people
-    values (6, 'Charles', 'Darwin',	1809, 1882);
-    insert into people
-    values (7, 'Pele', null, 1940, null);
-    insert into people
-    values (8, 'Fidel',	'Castro', 1926,	null);
+    insert into people ("id", "First Name", "Last Name", "Year of Birth", "Year of Death")
+    value (1, 'Marilyn', 'Monroe', 1926, 1962),
+    	  (2, 'Abraham', 'Lincoln', 1809, 1865),
+    	  (3, 'Nelson', 'Mandela', 1918, 2013),
+    	  (4, 'Winston', 'Churchill', 1874, 1965),
+    	  (5, 'Bill', 'Gates', 1955, null),
+    	  (6, 'Charles', 'Darwin', 1809, 1882),
+    	  (7, 'Pele', null, 1940, null),
+    	  (8, 'Fidel', 'Castro', 1926, null);
     ```
 
 3. Create a query that would return everything from the table:
@@ -64,7 +56,7 @@ Here are eight famous people:
 
     ```postgresql
     select * from people
-    where id=1 or id=3 or id=7 or id=8;
+    where id IN (1, 3, 7, 8);
     ```
 
 6. Create a query that would return all the people except the person with the ID of 4 (`Winston Churchill`).
