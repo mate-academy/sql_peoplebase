@@ -1,0 +1,118 @@
+1.
+
+CREATE TABLE people
+(
+    id              int,
+    "First Name"    char(30),
+    "Last Name"     char(30),
+    "Year of Birth" int,
+    "Year of death" int
+);
+
+2.
+
+INSERT INTO "people" ("id", "First Name", "Last Name", "Year of Birth", "Year of death") 
+    VALUES (1, 'Marilyn', 'Monroe', 1926, 1962);
+INSERT INTO "people" ("id", "First Name", "Last Name", "Year of Birth", "Year of death") 
+    VALUES (2, 'Abraham', 'Lincoln', 1809, 1865);
+INSERT INTO "people" ("id", "First Name", "Last Name", "Year of Birth", "Year of death") 
+    VALUES (3, 'Nelson', 'Mandela', 1918, 2013);
+INSERT INTO "people" ("id", "First Name", "Last Name", "Year of Birth", "Year of death") 
+    VALUES (4, 'Winston', 'hurchill', 1874, 1965);
+INSERT INTO "people" ("id", "First Name", "Last Name", "Year of Birth", "Year of death") 
+    VALUES (5, 'Bill', 'Gates', 1955, null);
+INSERT INTO "people" ("id", "First Name", "Last Name", "Year of Birth", "Year of death") 
+    VALUES (6,	'Charles', 'Darwin', 1809, 1882);
+INSERT INTO "people" ("id", "First Name", "Last Name", "Year of Birth", "Year of death") 
+    VALUES (7, 'Pele', null, 1940, null);
+INSERT INTO "people" ("id", "First Name", "Last Name", "Year of Birth", "Year of death") 
+    VALUES (8, 'Fidel',	'Castro', 1926, null);
+
+3.
+SELECT * FROM people;
+
+4.
+SELECT * FROM people where id=5;
+
+5.
+SELECT * FROM people WHERE id IN (1, 3, 7, 8);
+
+6.
+SELECT * FROM people WHERE id<>4;
+
+7.
+SELECT "First Name", "Last Name" FROM people WHERE "Year of Birth" > 1920;
+
+8.
+SELECT "id" FROM people WHERE "Year of death" is null;
+
+9.
+SELECT "Year of Birth" As b, "Year of death" As d FROM people WHERE "Year of death" IS NOT NULL;
+
+10.
+SELECT DISTINCT "Year of Birth" FROM people;
+
+11.
+SELECT "First Name", "Last Name" FROM people WHERE "First Name" LIKE 'M%' OR "Last Name" LIKE 'M%';
+
+12.
+SELECT "First Name", "Last Name" FROM people WHERE "First Name" LIKE 'M%' AND "Last Name" LIKE 'M%';
+
+13.
+SELECT * FROM people WHERE NOT "Last Name" LIKE 'C%';
+
+14.
+SELECT * FROM people WHERE "First Name" LIKE '_M%';
+
+15.
+SELECT "First Name" FROM people ORDER BY "First Name";
+
+16.
+SELECT "First Name" AS fn FROM people ORDER BY "First Name" DESC;
+
+17.
+SELECT "Year of Birth", "Last Name" FROM people ORDER BY "Year of Birth" DESC, "Last Name" ;
+
+18.
+UPDATE people SET "Last Name" = 'Onyshchenko';
+
+19.
+UPDATE people SET "First Name" = 'Wilis' WHERE "Year of Birth" < 1900;
+
+20.
+UPDATE people SET "Year of Birth" = "Year of Birth" + 1
+
+21.
+DELETE FROM people WHERE "Year of death" < 2000;
+
+22.
+DELETE FROM people;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
