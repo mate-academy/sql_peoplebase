@@ -88,7 +88,7 @@ Here are eight famous people:
 9. Create a query that would return the years of birth and the years of death of everyone who has died. The columns should be aliased `b` and `d` respectively.
 
     ```postgresql
-    SELECT "Year of Birth" b, "Year of Death" d
+    SELECT "Year of Birth" AS b, "Year of Death" AS d
     FROM people
     WHERE "Year of Death" IS NOT NULL;
     ```
@@ -143,7 +143,7 @@ Here are eight famous people:
 16. Create a query that would return the first names of the people sorted in the reverse alphabetical order. The column should be aliased `fn`.
 
     ```postgresql
-    SELECT "First Name" fn
+    SELECT "First Name" AS fn
     FROM people
     ORDER BY "First Name" DESC;
     ```
