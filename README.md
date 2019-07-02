@@ -1,4 +1,4 @@
-# Peoplebase
+﻿# Peoplebase
 
 Here are eight famous people: 
 
@@ -63,7 +63,7 @@ Here are eight famous people:
     
 9. Create a query that would return the years of birth and the years of death of everyone who has died. The columns should be aliased `b` and `d` respectively.
 
-    SELECT "Year of Birth" AS "b", "Year of Death" AS "d" FROM people WHERE NOT "Year of Death" IS NULL
+    SELECT "Year of Birth" AS "b", "Year of Death" AS "d" FROM people WHERE "Year of Death" IS NOT NULL
     
 10. Create a query that would return the list of all years of birth, without repetition:
 
@@ -79,7 +79,7 @@ Here are eight famous people:
     
 13. Create a query that would select all the people except those whose last name starts with a `C`:
 
-    SELECT * FROM people WHERE NOT "Last Name" LIKE 'C%'
+    SELECT * FROM people WHERE "Last Name" NOT LIKE 'C%'
     
 14. Create a query that would select the people whose first name starts with a letter that precedes `M` in the English alphabet:
 
