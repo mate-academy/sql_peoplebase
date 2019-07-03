@@ -18,11 +18,11 @@ Here are eight famous people:
     ```postgresql
     create table table_name
     (
-       Id int,
-       "First Name" text,
-       "Last Name" text,
-       "Year of Birth" int,
-       "Year of Death " int
+       id int,
+       "first_name" text,
+       "last_name" text,
+       "year_of_birth" int,
+       "year_of_death" int
     );
 
     ```
@@ -30,7 +30,7 @@ Here are eight famous people:
 2. **Manually** create a query or a series of queries that would fill the table with the information above. Put the query/queries below:
 
     ```postgresql
-    INSERT INTO  "table_name"   ("id", "First Name", "Last Name", "Year of Birth", "Year of Death")
+    INSERT INTO  "table_name"   ("id", "first_name", "last_name", "year_of_birth", "year_of_death")
     VALUES 
     (1, "Marilyn ", "Monroe", 1926, 1962), 
     (2, "Abraham", "Lincoln", 1809, 1865), 
@@ -57,7 +57,7 @@ Here are eight famous people:
 5. Create a query that would return the four people with the following IDs: 1, 3, 7, 8.
 
     ```postgresql
-    SELECT * FROM table_name WHERE (id = 1) OR (id = 3) OR (id = 7) OR (id = 8)
+    SELECT * FROM table_name WHERE id IN (1, 3, 7, 8)
     ```
 
 6. Create a query that would return all the people except the person with the ID of 4 (`Winston Churchill`).
@@ -69,97 +69,97 @@ Here are eight famous people:
 7. Create a query that would select the first names and last names of the people who were born after 1920:
 
     ```postgresql
-    SELECT "First Name", "Last Name" FROM table_name WHERE "Year of Birth" > 1920
+    SELECT "first_Name", "last_Name" FROM table_name WHERE "year_of_birth" > 1920
     ```
     
 8. Create a query that would select the IDs of the living people:
 
     ```postgresql
-    SELECT id FROM table_name WHERE "Year of Death " IS NULL
+    SELECT id FROM table_name WHERE "year_of_death " IS NULL
     ```
     
 9. Create a query that would return the years of birth and the years of death of everyone who has died. The columns should be aliased `b` and `d` respectively.
 
     ```postgresql
-    SELECT "Year of Birth" as b, "Year of Death " as d FROM table_name WHERE NOT "Year of Death " IS NULL
+    SELECT "year_of_birth" as b, "year_of_death " as d FROM table_name WHERE "year_of_death " IS NOT NULL
     ```
     
 10. Create a query that would return the list of all years of birth, without repetition:
 
     ```postgresql
-    SELECT DISTINCT "Year of Birth" FROM table_name
+    SELECT DISTINCT "year_of_birth" FROM table_name
     ```
 
 11. Create a query that would select the people with either their first or last name starting with an `M`:
 
     ```postgresql
-   SELECT * FROM table_name WHERE "First Name" ~~ 'M%' OR "Last Name" ~~ 'M%'
+   SELECT * FROM table_name WHERE "first_name" ~~ 'M%' OR "last_name" ~~ 'M%'
     ```
 
 12. Create a query that would select the people with both their first and last name starting with an `M`:
 
     ```postgresql
-    SELECT * FROM table_name WHERE "First Name" ~~ 'M%' AND "Last Name" ~~ 'M%'
+    SELECT * FROM table_name WHERE "first_name" ~~ 'M%' AND "last_name" ~~ 'M%'
     ```
     
 13. Create a query that would select all the people except those whose last name starts with a `C`:
 
     ```postgresql
-    SELECT * FROM table_name WHERE NOT "Last Name" ~~ 'C%'
+    SELECT * FROM table_name WHERE "last_name" !~~ 'C%'
     ```
     
 14. Create a query that would select the people whose first name starts with a letter that precedes `M` in the English alphabet:
 
     ```postgresql
-    SELECT * FROM table_name WHERE LEFT("Last Name", 1) < 'M'
+    SELECT * FROM table_name WHERE LEFT("last_name", 1) < 'M'
     ```
     
 15. Create a query that would return all the people sorted by their last name alphabetically:
 
     ```postgresql
-    SELECT * FROM table_name ORDER BY "Last Name" 
+    SELECT * FROM table_name ORDER BY "last_name" 
     ```
 
 16. Create a query that would return the first names of the people sorted in the reverse alphabetical order. The column should be aliased `fn`.
 
     ```postgresql
-    SELECT "First Name" as fn FROM table_name ORDER BY "First Name" DESC
+    SELECT "first_name" as fn FROM table_name ORDER BY "first_name" DESC
     ```
 
 17. Create a query that would return the people sorted by their year of birth in the descending order, and then (if two or more people share the same year of birth) by their last name alphabetically:
 
     ```postgresql
-    SELECT * FROM table_name ORDER BY "Year of Birth", "Last Name" DESC
+    SELECT * FROM table_name ORDER BY "year_of_birth", "last_name" DESC
     ```
     
 18. Set everyone’s last name to your last name:
 
     ```postgresql
-    UPDATE table_name SET "Last Name" = 'Volkovnitskyi' WHERE true
+    UPDATE table_name SET "last_Name" = 'Volkovnitskyi'
     ```
     
 19. Update the first name of everyone who was born before 1900 to your favorite character’s name:
 
     ```postgresql
-    UPDATE table_name SET "First Name" = 'Zig-Zag' WHERE "Year of Birth" < 1900
+    UPDATE table_name SET "first_name" = 'Zig-Zag' WHERE "year_of_birth" < 1900
     ```
     
 20. Add 1 to both the year of birth and year of death for everyone whose ID is less than 5:
 
     ```postgresql
-    UPDATE table_name SET "Year of Birth" = "Year of Birth " + 1, "Year of Death " = "Year of Death " + 1 WHERE id < 5
+    UPDATE table_name SET "year_of_birth" = "year_of_birth " + 1, "year_of_death " = "year_of_death " + 1 WHERE id < 5
     ```
 
 21. Delete from the table everyone who died before 2000:
 
     ```postgresql
-        DELETE from table_name WHERE "Year of Death " < 2000
+        DELETE from table_name WHERE "year_of_death " < 2000
     ```
 
 22. Delete everyone from the table:
 
     ```postgresql
-        DELETE from table_name WHERE true
+        DELETE from table_name
     ```
     
 Don’t forget to create a pull request.
