@@ -91,8 +91,8 @@ Here are eight famous people:
     ```postgresql
     ... here goes your SQL ...
     SELECT
-    'year of birth' AS b,
-    'year of death' AS d
+      'year of birth' AS b,
+      'year of death' AS d
     FROM people
     WHERE 'year of death' IS NOT NULL;
     
