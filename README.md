@@ -181,8 +181,8 @@ Here are eight famous people:
     ... here goes your SQL ...
     UPDATE people
     SET
-    'year of birth' = 'year of birth' + 1,
-    'year of death' = 'year of death' + 1
+      'year of birth' = 'year of birth' + 1,
+      'year of death' = 'year of death' + 1
     WHERE id < 5;
 
 21. Delete from the table everyone who died before 2000:
