@@ -70,7 +70,7 @@ Here are eight famous people:
 
 11. Create a query that would select the people with either their first or last name starting with an `M`:
     
-    SELECT * FROM people WHERE first_name LIKE 'M%' OR last_name LIKE '%M';
+    SELECT * FROM people WHERE first_name LIKE 'M%' OR last_name LIKE 'M%';
 
 12. Create a query that would select the people with both their first and last name starting with an `M`:
 
