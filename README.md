@@ -23,7 +23,7 @@ Here are eight famous people:
                           last_name text,
                           birth_year int,
                           death_year int
-                      )
+                      );
     ```
 
 2. **Manually** create a query or a series of queries that would fill the table with the information above. Put the query/queries below:
